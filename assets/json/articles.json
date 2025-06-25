@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "assets/images/article-page-1.png",
+        "title": "Why Sleep is Your Superpower for Better Health",
+        "author": "John Doe",
+        "dateCreated": "18 Mar 2025",
+        "category": "Lifestyle",
+        "description": "Discover how quality sleep can boost your health, improve focus, and increase longevity.",
+        "detail": [
+            "Sleep is often overlooked, but it is one of the most powerful tools for maintaining overall health. When you sleep, your body repairs tissues, strengthens the immune system, and consolidates memories, making it crucial for both physical and mental well-being. Poor sleep can lead to cognitive decline, weakened immunity, and an increased risk of chronic conditions such as heart disease and diabetes. Studies have shown that individuals who consistently get less than six hours of sleep per night are more prone to stress, mood swings, and reduced productivity.",
+            "To improve sleep quality, it's important to establish a consistent nighttime routine. Avoiding screens at least an hour before bed, creating a relaxing environment, and maintaining a regular sleep schedule can help regulate the body's internal clock. Foods rich in magnesium and melatonin, such as almonds, bananas, and cherries, can also support better sleep. Making sleep a priority isn't just about feeling rested—it's a key factor in long-term health and vitality."
+        ]
+    },
+    {
+        "id": 2,
+        "imageUrl": "assets/images/article-page-2.png",
+        "title": "Morning Walks: The Secret to a Healthier You",
+        "author": "Jane Smith",
+        "dateCreated": "05 Feb 2025",
+        "category": "Fitness",
+        "description": "Learn why a simple morning walk can transform your physical and mental health.",
+        "detail": [
+            "Starting your day with a morning walk is one of the simplest yet most effective ways to boost your overall health. A brisk walk in the fresh air stimulates circulation, enhances cardiovascular fitness, and helps regulate blood sugar levels. It also promotes the release of endorphins, the body's natural feel-good hormones, reducing stress and anxiety. Many studies suggest that individuals who engage in regular morning walks have improved mental clarity, better focus, and greater energy levels throughout the day.",
+            "Beyond the immediate benefits, morning walks contribute to long-term health improvements. Exposure to early sunlight helps regulate your circadian rhythm, improving sleep quality at night. Additionally, walking outdoors allows you to connect with nature, which has been linked to lower levels of cortisol, the stress hormone. To build the habit, start with a 10-minute walk and gradually increase the duration. Whether you prefer walking alone, with a friend, or listening to a podcast, incorporating this simple activity into your routine can lead to lasting health benefits."
+        ]
+    },
+    {
+        "id": 3,
+        "imageUrl": "assets/images/article-page-3.png",
+        "title": "Hydration Hacks: Drink Smarter, Stay Healthier",
+        "author": "Alice Johnson",
+        "dateCreated": "01 Jan 2025",
+        "category": "Lifestyle",
+        "description": "Practical tips to stay hydrated and keep your body functioning at its best.",
+        "detail": [
+            "Proper hydration is essential for maintaining energy levels, supporting digestion, and regulating body temperature. Many people underestimate their daily water needs, leading to fatigue, headaches, and even poor concentration. Hydration doesn't just mean drinking plain water—it includes consuming water-rich foods like cucumbers, watermelon, and oranges, which help replenish lost fluids while providing essential vitamins and minerals. Additionally, herbal teas and infused water with lemon or mint can make hydration more enjoyable.",
+            "One of the easiest ways to ensure adequate water intake is to make hydration a habit. Carrying a reusable water bottle, setting reminders on your phone, or using apps that track your water consumption can help. It's also helpful to drink a glass of water before meals to aid digestion and prevent overeating. If you're physically active, increasing your water intake is crucial to compensate for fluids lost through sweat. By drinking smarter and making hydration a priority, you can enhance overall well-being and maintain optimal body function."
+        ]
+    },
+    {
+        "id": 4,
+        "imageUrl": "assets/images/article-page-4.png",
+        "title": "Simple Ways to Track Water Intake and Avoid Dehydration",
+        "author": "Jane Smith",
+        "dateCreated": "06 Dec 2024",
+        "category": "Lifestyle",
+        "description": "Easy methods to ensure you're drinking enough water daily.",
+        "detail": [
+            "Many people struggle with drinking enough water throughout the day, often leading to dehydration without realizing it. Dehydration can cause dizziness, fatigue, dry skin, and even muscle cramps. One simple method to track your water intake is the '8x8 rule,' which suggests drinking eight 8-ounce glasses of water daily. However, water needs vary depending on activity level, climate, and individual health conditions. Instead of relying solely on thirst cues, setting measurable hydration goals can be more effective.",
+            "Using a marked water bottle with time-based drinking targets or hydration-tracking apps can help keep you accountable. Other easy methods include drinking a glass of water first thing in the morning, before meals, and after every bathroom visit. If you find plain water boring, try adding natural flavors like lemon, berries, or cucumber to make it more enjoyable. By implementing these simple habits, you can prevent dehydration, improve energy levels, and keep your body functioning at its best."
+        ]
+    },
+    {
+        "id" : 5,
+        "imageUrl" : "assets/images/article-page-5.jpeg",
+        "title" : "Balanced Diet in Maintaining Long-Term Health",
+        "author" : "John Doe",
+        "dateCreated" : "15 Nov 2024",
+        "category": "Healthy Food",
+        "description" : "A balanced diet supports overall health, while processed foods raise risks. Healthy eating and exercise promote well-being and weight management.",
+        "detail" : [
+          "In today's fast-paced world, maintaining a balanced diet has become increasingly important for preserving long-term health. With an abundance of food options, many of which are processed and high in sugar, salt, and unhealthy fats, it's easy to lose sight of what truly nourishes the body. However, understanding the role of nutrition can make all the difference in achieving a healthy lifestyle.",
+          "A balanced diet is one that includes a variety of nutrients from different food groups, which are essential for the body's functioning. These include carbohydrates, proteins, fats, vitamins, and minerals. Each of these plays a unique role in ensuring the body operates at its best. Carbohydrates serve as the body's primary energy source and are found in foods like grains, fruits, and vegetables. Proteins are important for muscle repair and immune function, and can be found in lean meats, legumes, and dairy products. Fats, especially healthy fats, are necessary for brain health and energy storage, with sources such as nuts, seeds, and avocados. Vitamins and minerals, found in a wide range of fruits and vegetables, are vital for various bodily functions, from supporting bone health to boosting the immune system.",
+          "When the diet lacks balance, it can contribute to a range of health issues, including obesity, diabetes, heart disease, and certain cancers. A poor diet, particularly one high in processed sugars and unhealthy fats, can lead to chronic conditions and premature aging. On the other hand, a diet focused on whole foods like fruits, vegetables, whole grains, and lean proteins can improve heart health, reduce inflammation, and enhance mental clarity. Moreover, research has shown that a healthy diet can also positively impact mood, sleep, and energy levels.",
+          "One of the most discussed aspects of diet is weight management. While fad diets promise quick fixes, sustainable weight loss is achieved through consistent, healthy eating habits. It's crucial to focus on nutrient-dense foods rather than excessively cutting calories. Research has shown that diets rich in fiber, such as those found in whole grains, vegetables, and fruits, can help control appetite and improve digestion. In addition, incorporating regular exercise with a balanced diet enhances weight management by boosting metabolism and building lean muscle mass.",
+          "Adopting a healthier diet doesn't require strict rules or extreme changes. It's about making mindful choices that nourish the body and support long-term well-being. Eating a variety of colorful fruits and vegetables, limiting processed foods, and staying hydrated are simple yet powerful ways to improve overall health. Planning meals ahead of time can help control ingredients and portion sizes, making it easier to stick to a balanced diet.",
+          "The key to a healthier life is not perfection but progress. By understanding the role of nutrition and making small, consistent changes to eating habits, anyone can improve their health and live a more energetic life. The goal is to nourish your body with the foods it needs, fuel your mind, and enjoy the journey toward better health."
+        ]
+    }
+]
