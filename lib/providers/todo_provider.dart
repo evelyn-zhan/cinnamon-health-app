@@ -5,6 +5,9 @@ class TodoProvider with ChangeNotifier {
   String active = "todo";
   int todoCount = 0, finishedCount = 0;
 
+  Map<String, dynamic>? lastRemovedTask;
+  int? lastRemovedTaskIndex;
+
   void changeActive(String page) {
     active = page;
     notifyListeners();
@@ -30,22 +33,34 @@ class TodoProvider with ChangeNotifier {
       "done": false
     });
 
-    todoCount = todoList.where((task) => !task["done"]).length;
-
+    recalculateCounts();
     notifyListeners();
   }
 
   void checkTask(Map<String, dynamic> task) {
     task["done"] = !task["done"];
-    todoCount = todoList.where((task) => !task["done"]).length;
-    finishedCount = todoList.where((task) => task["done"]).length;
+    recalculateCounts();
     notifyListeners();
   }
 
   void removeTask(Map<String, dynamic> task) {
+    lastRemovedTaskIndex = todoList.indexOf(task);
+    lastRemovedTask = task;
     todoList.remove(task);
+    recalculateCounts();
+    notifyListeners();
+  }
+
+  void undoRemove() {
+    if (lastRemovedTask != null && lastRemovedTaskIndex != null) {
+      todoList.insert(lastRemovedTaskIndex!, lastRemovedTask!);
+      recalculateCounts();
+      notifyListeners();
+    }
+  }
+
+  void recalculateCounts() {
     todoCount = todoList.where((task) => !task["done"]).length;
     finishedCount = todoList.where((task) => task["done"]).length;
-    notifyListeners();
   }
 }
