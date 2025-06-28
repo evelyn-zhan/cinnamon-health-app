@@ -9,7 +9,7 @@ class AddTaskButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
-          backgroundColor: Color(0xFFFAFAFA),
+          // backgroundColor: Color(0xFFFAFAFA),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
           context: context,
           builder: (context) => AddTaskBottomSheet()

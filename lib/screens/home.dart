@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
                         highlightColor: Colors.transparent
                       ),
                       onPressed: () => Scaffold.of(context).openDrawer(),
-                      icon: Icon(Icons.menu, color: Color(0xFF1E1E1E), size: 30),
+                      icon: Icon(Icons.menu, size: 30),
                     ),
                     SizedBox(height: 20),
                     Row(

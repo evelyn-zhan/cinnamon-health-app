@@ -15,7 +15,7 @@ class ToDo extends StatelessWidget {
         children: [
           TabBar(
             labelColor: Color(0xFF0369A1),
-            unselectedLabelColor: Colors.black,
+            // unselectedLabelColor: Colors.black,
             indicatorColor: Color(0xFF0369A1),
             tabs: [
               Tab(

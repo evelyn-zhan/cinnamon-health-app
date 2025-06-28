@@ -12,7 +12,6 @@ class ProfileDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 400,
-      backgroundColor: Color(0xFFFAFAFA),
       shape: RoundedRectangleBorder(),
       child: ListView(
         children: [
@@ -22,6 +21,7 @@ class ProfileDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.black,
               // borderRadius: BorderRadius.circular(5)
+              
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
