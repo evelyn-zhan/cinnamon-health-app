@@ -63,4 +63,10 @@ class TodoProvider with ChangeNotifier {
     todoCount = todoList.where((task) => !task["done"]).length;
     finishedCount = todoList.where((task) => task["done"]).length;
   }
+
+  void markAllAsFinished() {
+    todoList.forEach((task) => task["done"] = true);
+    recalculateCounts();
+    notifyListeners();
+  }
 }
