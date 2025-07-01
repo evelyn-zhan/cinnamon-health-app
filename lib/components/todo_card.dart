@@ -61,8 +61,8 @@ class ToDoCard extends StatelessWidget {
         return AlertDialog(
           backgroundColor: Theme.of(context).canvasColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          title: Text('Delete Confirmation', style: GoogleFonts.poppins(color: Color(0xFF212121), fontWeight: FontWeight.w600)),
-          content: Text('Are you sure you want to delete this task?', style: GoogleFonts.poppins(color: Color(0xFF555555))),
+          title: Text('Delete Confirmation', style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
+          content: Text('Are you sure you want to delete this task?', style: GoogleFonts.poppins(color: Color(0xFF555555), fontWeight: FontWeight.w500)),
           actions: [
             TextButton(
               style: TextButton.styleFrom(
@@ -84,7 +84,7 @@ class ToDoCard extends StatelessWidget {
                 ScaffoldMessenger.of(context).removeCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Task has been deleted.', style: GoogleFonts.poppins(fontWeight: FontWeight.w500)),
+                    content: Text('Task has been deleted.', style: GoogleFonts.poppins(fontWeight: FontWeight.w500, color: Colors.grey)),
                     backgroundColor: Color(0xFF212121), // Warna hitam aksen utama
                     behavior: SnackBarBehavior.floating, // Membuat snackbar mengambang
                     shape: RoundedRectangleBorder(
