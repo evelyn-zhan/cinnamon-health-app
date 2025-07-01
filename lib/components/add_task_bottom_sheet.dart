@@ -99,7 +99,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       icon: Icon(Icons.clear_rounded, color: Colors.white, size: 20),
                       label: Text("Clear", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600)),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF212121),
+                        backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
@@ -119,7 +119,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       icon: Icon(Icons.add_rounded, color: Colors.white, size: 20),
                       label: Text("Add", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600)),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF212121),
+                        backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
