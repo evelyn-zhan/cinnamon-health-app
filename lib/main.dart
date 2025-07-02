@@ -71,7 +71,10 @@ class _MyAppState extends State<MyApp> {
           style: IconButton.styleFrom(
             foregroundColor: Colors.white
           )
-        )
+        ),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.all(Colors.white)
+        ),
       )
       : ThemeData.light().copyWith(
         scaffoldBackgroundColor: Color(0xFFFAFAFA),
@@ -108,7 +111,10 @@ class _MyAppState extends State<MyApp> {
         ),
         tabBarTheme: TabBarTheme(
           unselectedLabelColor: Color(0xFF1E1E1E),
-        )
+        ),
+        checkboxTheme: CheckboxThemeData(
+          checkColor: MaterialStateProperty.all(Colors.white)
+        ),
       ),
       home: Scaffold(
         appBar: context.watch<PageProvider>().pageName == ""
