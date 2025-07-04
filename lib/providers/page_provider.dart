@@ -16,7 +16,6 @@ class PageProvider with ChangeNotifier {
     } else if (pageIndex == 2) {
       pageName = "My Tasks";
     } else if (pageIndex == 3) {
-      print("he");
       pageName = "Recipes";
     } else {
       pageName = "";
