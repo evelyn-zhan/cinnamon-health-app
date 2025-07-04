@@ -6,19 +6,22 @@ class AddTaskButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        showModalBottomSheet(
-          // backgroundColor: Color(0xFFFAFAFA),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
-          context: context,
-          builder: (context) => AddTaskBottomSheet()
-        );
-      },
-      backgroundColor: Color(0xFF1E1E1E),
-      foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Icon(Icons.add_rounded, size: 30)
+    return Tooltip(
+      message: "Add New Task",
+      child: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            // backgroundColor: Color(0xFFFAFAFA),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
+            context: context,
+            builder: (context) => AddTaskBottomSheet()
+          );
+        },
+        backgroundColor: Color(0xFF1E1E1E),
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        child: Icon(Icons.add_rounded, size: 30)
+      ),
     );
   }
 }
