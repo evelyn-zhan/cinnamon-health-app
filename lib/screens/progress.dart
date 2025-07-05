@@ -1,7 +1,9 @@
-// progress.dart (ini sama dengan yang terakhir kali saya berikan)
+// screens/progress_tracker_screen.dart
 
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:health_mobile_app/components/exercise_card.dart';
+import 'package:health_mobile_app/utils/chart_data.dart';
 import 'package:provider/provider.dart';
 import 'package:health_mobile_app/providers/progress_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,8 +100,7 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                           ),
                           SizedBox(height: 10),
                           Text(
-                            // Ini adalah bagian yang mengambil nilai dari provider
-                            '${progressProvider.totalWorkoutsDone}', // Mengambil dari getter yang dimodifikasi
+                            '${progressProvider.totalWorkoutsDone}',
                             style: GoogleFonts.poppins(
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
@@ -120,6 +121,7 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                     flex: 1,
                     child: Column(
                       children: [
+                        // Menggunakan ExerciseCard yang sudah dipisahkan
                         ExerciseCard(
                           iconAsset: 'assets/images/shoe-icon.png',
                           title: 'Steps',
@@ -130,6 +132,7 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                           shadowColor: Theme.of(context).shadowColor,
                         ),
                         SizedBox(height: 15),
+                        // Menggunakan ExerciseCard yang sudah dipisahkan
                         ExerciseCard(
                           iconAsset: 'assets/images/mineral-water.png',
                           title: 'Water',
@@ -269,8 +272,9 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                     SizedBox(height: 15),
                     SizedBox(
                       height: 200,
+                      // Menggunakan fungsi getWeightChartData yang sudah dipisahkan
                       child: LineChart(
-                        mainData(
+                        getWeightChartData(
                           progressProvider.weightSpots,
                           progressProvider.getDateLabels(),
                           fitnessColor,
@@ -284,227 +288,6 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  LineChartData mainData(List<FlSpot> spots, List<String> dateLabels,
-      Color lineColor1, Color lineColor2) {
-    double minYValue = 0;
-    double maxYValue = 0;
-
-    if (spots.isNotEmpty) {
-      minYValue = spots.map((e) => e.y).reduce((a, b) => a < b ? a : b);
-      maxYValue = spots.map((e) => e.y).reduce((a, b) => a > b ? a : b);
-    } else {
-      minYValue = 55;
-      maxYValue = 65;
-    }
-
-    minYValue = (minYValue - 2).floorToDouble();
-    maxYValue = (maxYValue + 2).ceilToDouble();
-
-    if (maxYValue - minYValue < 5) {
-      final center = (minYValue + maxYValue) / 2;
-      minYValue = center - 2.5;
-      maxYValue = center + 2.5;
-    }
-
-    return LineChartData(
-      gridData: FlGridData(
-        show: true,
-        drawVerticalLine: true,
-        horizontalInterval: 1,
-        getDrawingHorizontalLine: (value) {
-          return FlLine(
-            color: const Color(0xfff3f3f3),
-            strokeWidth: 1,
-          );
-        },
-        getDrawingVerticalLine: (value) {
-          return FlLine(
-            color: const Color(0xfff3f3f3),
-            strokeWidth: 1,
-          );
-        },
-      ),
-      titlesData: FlTitlesData(
-        show: true,
-        bottomTitles: AxisTitles(
-          sideTitles: SideTitles(
-            showTitles: true,
-            reservedSize: 45,
-            interval: 1,
-            getTitlesWidget: (value, meta) {
-              const style = TextStyle(
-                color: Color(0xff68737d),
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-              );
-              int index = value.toInt();
-              String text;
-              if (index >= 0 && index < dateLabels.length) {
-                text = dateLabels[index];
-              } else {
-                text = '';
-              }
-              return SideTitleWidget(
-                child: Text(text, style: style, textAlign: TextAlign.center),
-                meta: meta,
-                space: 15.0,
-              );
-            },
-          ),
-        ),
-        leftTitles: AxisTitles(
-          sideTitles: SideTitles(
-            showTitles: true,
-            reservedSize: 60,
-            interval: 1,
-            getTitlesWidget: (value, meta) {
-              const style = TextStyle(
-                color: Color(0xff67727d),
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-              );
-              if (value % 1 == 0) {
-                return Text(value.toInt().toString(),
-                    style: style, textAlign: TextAlign.left);
-              }
-              return Container();
-            },
-          ),
-        ),
-        topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-        rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-      ),
-      borderData: FlBorderData(
-        show: true,
-        border: Border.all(color: const Color(0xffececec), width: 1),
-      ),
-      minX: 0,
-      maxX: 6,
-      minY: minYValue,
-      maxY: maxYValue,
-      lineBarsData: [
-        LineChartBarData(
-          spots: spots,
-          isCurved: true,
-          gradient: LinearGradient(
-            colors: [
-              lineColor1,
-              lineColor2,
-            ],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          barWidth: 3,
-          isStrokeCapRound: true,
-          dotData: FlDotData(
-            show: true,
-            getDotPainter: (spot, percent, bar, index) {
-              return FlDotCirclePainter(
-                radius: 4,
-                color: lineColor1,
-                strokeWidth: 2,
-                strokeColor: Colors.white,
-              );
-            },
-          ),
-          belowBarData: BarAreaData(
-            show: true,
-            gradient: LinearGradient(
-              colors: [
-                lineColor1.withOpacity(0.3),
-                lineColor2.withOpacity(0.3),
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-// ExerciseCard (tetap sama)
-class ExerciseCard extends StatelessWidget {
-  final String? iconAsset;
-  final String title;
-  final String value;
-  final String valueSuffix;
-  final Color backgroundColor;
-  final Color valueColor;
-  final Color shadowColor;
-
-  const ExerciseCard({
-    Key? key,
-    required this.iconAsset,
-    required this.title,
-    required this.value,
-    required this.valueSuffix,
-    required this.backgroundColor,
-    required this.valueColor,
-    required this.shadowColor,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: shadowColor,
-            spreadRadius: 1,
-            blurRadius: 5,
-            offset: Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.poppins(
-                    fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              SizedBox(height: 11),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: '$value ',
-                      style: GoogleFonts.poppins(
-                        color: valueColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    TextSpan(
-                      text: valueSuffix,
-                      style: GoogleFonts.poppins(
-                        color: Color(0xFF898989),
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-          Spacer(),
-          if (iconAsset != null) Image.asset(iconAsset!, width: 30, height: 30),
-        ],
       ),
     );
   }
