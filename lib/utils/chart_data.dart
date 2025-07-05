@@ -1,5 +1,3 @@
-// utils/chart_data_helper.dart
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +10,6 @@ LineChartData getWeightChartData(List<FlSpot> spots, List<String> dateLabels,
     minYValue = spots.map((e) => e.y).reduce((a, b) => a < b ? a : b);
     maxYValue = spots.map((e) => e.y).reduce((a, b) => a > b ? a : b);
   } else {
-    // Default values if no spots are available
     minYValue = 55;
     maxYValue = 65;
   }

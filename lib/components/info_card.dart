@@ -1,5 +1,3 @@
-// lib/widgets/info_card.dart
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,7 +6,7 @@ class InfoCard extends StatelessWidget {
   final String value;
   final String comparisonText;
   final String imageAsset;
-  final List<Color> gradientColors; // Menggunakan List<Color> untuk gradien
+  final List<Color> gradientColors;
   final Alignment beginGradient;
   final Alignment endGradient;
   final Color textColor;
@@ -21,8 +19,8 @@ class InfoCard extends StatelessWidget {
     required this.comparisonText,
     required this.imageAsset,
     required this.gradientColors,
-    this.beginGradient = Alignment.topLeft, // Default top-left
-    this.endGradient = Alignment.bottomRight, // Default bottom-right
+    this.beginGradient = Alignment.topLeft,
+    this.endGradient = Alignment.bottomRight,
     required this.textColor,
     required this.comparisonTextColor,
   }) : super(key: key);

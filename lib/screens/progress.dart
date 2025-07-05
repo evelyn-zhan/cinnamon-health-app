@@ -1,5 +1,3 @@
-// lib/screens/progress_tracker_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:health_mobile_app/components/exercise_card.dart';
@@ -21,7 +19,6 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
   @override
   void initState() {
     super.initState();
-    // Menginisialisasi teks controller dengan berat badan saat ini dari provider
     _weightController.text =
         Provider.of<ProgressProvider>(context, listen: false)
             .currentWeight
@@ -39,20 +36,16 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
     final progressProvider = Provider.of<ProgressProvider>(context);
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
-    final Color fitnessColor = Color(0xFF0369A1); // Biru tua
-    final Color nutritionColor = Color(0xFF16A34A); // Hijau tua
-    final Color selfCareColor = Color(0xFFCA8A04); // Kuning/Coklat tua
+    final Color fitnessColor = Color(0xFF0369A1);
+    final Color nutritionColor = Color(0xFF16A34A);
+    final Color selfCareColor = Color(0xFFCA8A04);
 
-    // --- Data Dummy untuk InfoCard ---
-    // Anda bisa menggantinya dengan data nyata dari progressProvider jika sudah tersedia
     final double totalCaloriesBurned = 257.0;
-    final double martabakManisCalories =
-        240.0; // Kalori per 1 potong Martabak Manis (estimasi)
-    final double martabakEquivalent =
-        totalCaloriesBurned / martabakManisCalories;
+    final double ramenCalories = 240.0;
+    final double ramenEquivalent = totalCaloriesBurned / ramenCalories;
 
     final double totalDistanceKm = 6.42;
-    final double bigBenHeight = 0.096; // Tinggi Big Ben dalam km (96 meter)
+    final double bigBenHeight = 0.096;
     final double bigBenEquivalent = totalDistanceKm / bigBenHeight;
     // --- Akhir Data Dummy ---
 
@@ -161,20 +154,16 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                 ],
               ),
               SizedBox(height: 20),
-
-              // --- Widget InfoCard untuk Calories Burned (menggunakan gradien 3 warna) ---
               InfoCard(
                 title: 'Total calories burned',
                 value: '${totalCaloriesBurned.toStringAsFixed(0)} kcal',
                 comparisonText:
-                    '≈${martabakEquivalent.toStringAsFixed(2)} piece(s) of Martabak Manis',
-                imageAsset: 'assets/images/mineral-water.png',
+                    '≈${ramenEquivalent.toStringAsFixed(2)} bowl(s) of Ramen',
+                imageAsset: 'assets/images/ramen.png',
                 gradientColors: [
-                  fitnessColor.withOpacity(0.2), // Mulai dengan biru pudar
-                  nutritionColor
-                      .withOpacity(0.1), // Transisi ke hijau lebih pudar
-                  selfCareColor
-                      .withOpacity(0.05), // Berakhir dengan kuning sangat pudar
+                  fitnessColor.withOpacity(0.2),
+                  nutritionColor.withOpacity(0.1),
+                  selfCareColor.withOpacity(0.05),
                 ],
                 beginGradient: Alignment.topLeft,
                 endGradient: Alignment.bottomRight,
@@ -183,30 +172,24 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                     isDarkMode ? Colors.grey[400]! : Colors.grey[700]!,
               ),
               SizedBox(height: 15),
-              // --- Widget InfoCard untuk Total Distance (menggunakan gradien 3 warna) ---
               InfoCard(
                 title: 'Total distance',
                 value: '${totalDistanceKm.toStringAsFixed(2)} km',
-                // Teks perbandingan bisa dipecah baris secara manual jika terlalu panjang
                 comparisonText:
                     '≈Distance equivalent to climbing to\nthe top of Big Ben in Britain ${bigBenEquivalent.toStringAsFixed(2)} time(s)',
-                imageAsset: 'assets/images/mineral-water.png',
+                imageAsset: 'assets/images/big-ben.png',
                 gradientColors: [
-                  selfCareColor
-                      .withOpacity(0.05), // Mulai dengan kuning sangat pudar
-                  nutritionColor
-                      .withOpacity(0.1), // Transisi ke hijau lebih pudar
-                  fitnessColor.withOpacity(0.2), // Berakhir dengan biru pudar
+                  selfCareColor.withOpacity(0.05),
+                  nutritionColor.withOpacity(0.1),
+                  fitnessColor.withOpacity(0.2),
                 ],
-                beginGradient:
-                    Alignment.bottomLeft, // Contoh arah gradien berbeda
+                beginGradient: Alignment.bottomLeft,
                 endGradient: Alignment.topRight,
                 textColor: isDarkMode ? Colors.white : Colors.black,
                 comparisonTextColor:
                     isDarkMode ? Colors.grey[400]! : Colors.grey[700]!,
               ),
-              SizedBox(height: 30), // Spasi sebelum Body Weight
-
+              SizedBox(height: 30),
               Text(
                 'Body Weight',
                 style: GoogleFonts.poppins(
