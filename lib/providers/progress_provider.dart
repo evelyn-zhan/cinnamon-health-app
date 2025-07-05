@@ -1,5 +1,3 @@
-// providers/progress_provider.dart
-
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
@@ -7,17 +5,14 @@ import 'package:intl/intl.dart';
 class ProgressProvider with ChangeNotifier {
   double _currentWeight = 60.0;
   List<WeightEntry> _weightHistory = [];
-  int _cumulativeLoggedDays =
-      0; // <-- Variabel baru untuk melacak total hari log kumulatif
+  int _cumulativeLoggedDays = 0;
 
-  // Tanggal terakhir yang di-log atau tanggal saat inisialisasi dummy
   late DateTime _simulatedToday;
 
   ProgressProvider() {
     _simulatedToday =
         DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
     _initializeDummyWeightHistory();
-    // Setelah inisialisasi dummy, set _cumulativeLoggedDays berdasarkan jumlah entri awal
     _cumulativeLoggedDays = _weightHistory.length;
   }
 
@@ -37,7 +32,6 @@ class ProgressProvider with ChangeNotifier {
   void _sortAndTrimWeightHistory() {
     _weightHistory.sort((a, b) => a.date.compareTo(b.date));
 
-    // Pastikan hanya 7 hari terakhir yang dipertahankan untuk chart
     if (_weightHistory.length > 7) {
       _weightHistory = _weightHistory.sublist(_weightHistory.length - 7);
     }
@@ -45,7 +39,6 @@ class ProgressProvider with ChangeNotifier {
 
   double get currentWeight => _currentWeight;
 
-  // MODIFIKASI: totalWorkoutsDone sekarang mengembalikan _cumulativeLoggedDays
   int get totalWorkoutsDone => _cumulativeLoggedDays;
 
   List<FlSpot> get weightSpots {
@@ -54,7 +47,6 @@ class ProgressProvider with ChangeNotifier {
       spots.add(FlSpot(i.toDouble(), _weightHistory[i].weight));
     }
 
-    // Ini menambahkan spot kosong jika kurang dari 7, untuk memastikan chart selalu 7 hari
     while (spots.length < 7) {
       double lastWeight = spots.isNotEmpty ? spots.last.y : _currentWeight;
       spots.add(FlSpot(spots.length.toDouble(), lastWeight));
@@ -82,7 +74,6 @@ class ProgressProvider with ChangeNotifier {
   void logWeight(double weight) {
     _currentWeight = weight;
 
-    // Setiap kali log ditekan, kita simulasi ini adalah hari berikutnya
     _simulatedToday = _simulatedToday.add(Duration(days: 1));
 
     DateTime normalizedLogDate = DateTime(
@@ -93,19 +84,18 @@ class ProgressProvider with ChangeNotifier {
       if (_weightHistory[i].date.year == normalizedLogDate.year &&
           _weightHistory[i].date.month == normalizedLogDate.month &&
           _weightHistory[i].date.day == normalizedLogDate.day) {
-        _weightHistory[i].weight = weight; // Update berat untuk tanggal ini
+        _weightHistory[i].weight = weight;
         updatedExisting = true;
         break;
       }
     }
 
     if (!updatedExisting) {
-      _weightHistory
-          .add(WeightEntry(normalizedLogDate, weight)); // Tambahkan log baru
-      _cumulativeLoggedDays++; // <-- Hanya tingkatkan jika ini adalah entri hari baru
+      _weightHistory.add(WeightEntry(normalizedLogDate, weight));
+      _cumulativeLoggedDays++;
     }
 
-    _sortAndTrimWeightHistory(); // Urutkan dan pangkas setelah setiap log
+    _sortAndTrimWeightHistory();
     notifyListeners();
   }
 }
