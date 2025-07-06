@@ -1,0 +1,198 @@
+[
+  {
+    "recipeName": "Grilled Chicken Salad",
+    "imageLink": "https://healthbeet.org/wp-content/uploads/2020/08/Grilled-BBQ-Chicken-landscape-Large.jpg",
+    "category": "Healthy",
+    "servings": 2,
+    "prepTime": "25 minutes",
+    "ingredients": [
+      { "name": "Chicken breast", "quantity": "2", "unit": "pcs" },
+      { "name": "Olive oil", "quantity": "1", "unit": "tbsp" },
+      { "name": "Mixed greens", "quantity": "3", "unit": "cups" },
+      { "name": "Cherry tomatoes", "quantity": "1", "unit": "cup" },
+      { "name": "Cucumber", "quantity": "1", "unit": "medium" },
+      { "name": "Avocado", "quantity": "1", "unit": "medium" },
+      { "name": "Lemon juice", "quantity": "1", "unit": "tbsp" },
+      { "name": "Salt", "quantity": "to taste" },
+      { "name": "Black pepper", "quantity": "to taste" }
+    ],
+    "instructions": [
+      "Season the chicken breasts with salt and pepper.",
+      "Grill chicken in olive oil until fully cooked.",
+      "Chop vegetables and combine with mixed greens.",
+      "Slice chicken and place over salad.",
+      "Drizzle with lemon juice, toss, and serve."
+    ],
+    "calories": 350
+  },
+  {
+    "recipeName": "Quinoa Veggie Bowl",
+    "imageLink": "https://media.istockphoto.com/id/893716434/photo/healhty-vegan-lunch-bowl-avocado-quinoa-sweet-potato-tomato-spinach-and-chickpeas-vegetables.jpg?s=612x612&w=0&k=20&c=Iq4JOLbBYugsBqGjfoT2T9teJ0hd-sAVtTilVi_0PRM=",
+    "category": "Vegan",
+    "servings": 2,
+    "prepTime": "25 minutes",
+    "ingredients": [
+      { "name": "Quinoa", "quantity": "1", "unit": "cup" },
+      { "name": "Water", "quantity": "2", "unit": "cups" },
+      { "name": "Bell pepper", "quantity": "1", "unit": "medium" },
+      { "name": "Zucchini", "quantity": "1", "unit": "medium" },
+      { "name": "Carrot", "quantity": "1", "unit": "medium" },
+      { "name": "Olive oil", "quantity": "1", "unit": "tbsp" },
+      { "name": "Soy sauce", "quantity": "1", "unit": "tbsp" },
+      { "name": "Garlic", "quantity": "2", "unit": "cloves" }
+    ],
+    "instructions": [
+      "Cook quinoa in water until fluffy, about 15 minutes.",
+      "Chop vegetables into bite-sized pieces.",
+      "Sauté garlic and vegetables in olive oil until tender.",
+      "Stir in soy sauce.",
+      "Serve over a bed of quinoa."
+    ],
+    "calories": 300
+  },
+  {
+    "recipeName": "Oatmeal with Berries and Almonds",
+    "imageLink": "https://realfood.tesco.com/media/images/RFO-1400x919-BerryOatmealCrunch-be799601-93e0-44d4-9fb5-1f8bc533b93a-0-1400x919.jpg",
+    "category": "Breakfast",
+    "servings": 1,
+    "prepTime": "10 minutes",
+    "ingredients": [
+      { "name": "Rolled oats", "quantity": "1/2", "unit": "cup" },
+      { "name": "Water or milk", "quantity": "1", "unit": "cup" },
+      { "name": "Mixed berries", "quantity": "1/2", "unit": "cup" },
+      { "name": "Almonds", "quantity": "1", "unit": "tbsp" },
+      { "name": "Honey or maple syrup", "quantity": "1", "unit": "tsp" },
+      { "name": "Chia seeds", "quantity": "1", "unit": "tsp" }
+    ],
+    "instructions": [
+      "Simmer oats in water or milk until thick.",
+      "Transfer to a bowl and top with berries, almonds, and chia seeds.",
+      "Drizzle with honey or syrup."
+    ],
+    "calories": 280
+  },
+  {
+    "recipeName": "Baked Salmon with Asparagus",
+    "imageLink": "https://www.washingtonpost.com/resizer/QHMod_FnzsRaXR9oep_ZThxYGTk=/arc-anglerfish-washpost-prod-washpost/public/ZTVDFIBSQ4I6ZABWPWZFLP7ROY.jpg",
+    "category": "Healthy",
+    "servings": 2,
+    "prepTime": "25 minutes",
+    "ingredients": [
+      { "name": "Salmon fillets", "quantity": "2", "unit": "pieces" },
+      { "name": "Asparagus", "quantity": "1", "unit": "bunch" },
+      { "name": "Olive oil", "quantity": "1", "unit": "tbsp" },
+      { "name": "Lemon slices", "quantity": "4", "unit": "slices" },
+      { "name": "Garlic powder", "quantity": "1/2", "unit": "tsp" },
+      { "name": "Salt", "quantity": "to taste" },
+      { "name": "Black pepper", "quantity": "to taste" }
+    ],
+    "instructions": [
+      "Preheat oven to 200°C.",
+      "Place salmon and asparagus on a baking sheet, season, and drizzle with oil.",
+      "Top salmon with lemon slices and bake for 15 minutes.",
+      "Serve hot."
+    ],
+    "calories": 380
+  },
+  {
+    "recipeName": "Greek Yogurt Parfait",
+    "imageLink": "https://swirlsofflavor.com/wp-content/uploads/2022/01/Fruit-Yogurt-Parfait-Horizontal-1-scaled.jpg",
+    "category": "Snack",
+    "servings": 1,
+    "prepTime": "5 minutes",
+    "ingredients": [
+      { "name": "Greek yogurt", "quantity": "1", "unit": "cup" },
+      { "name": "Granola", "quantity": "1/4", "unit": "cup" },
+      { "name": "Mixed berries", "quantity": "1/2", "unit": "cup" },
+      { "name": "Honey", "quantity": "1", "unit": "tsp" }
+    ],
+    "instructions": [
+      "Layer yogurt, granola, and berries in a glass.",
+      "Drizzle with honey and serve."
+    ],
+    "calories": 250
+  },
+  {
+    "recipeName": "Stir-Fried Tofu with Broccoli",
+    "imageLink": "https://thedomesticgeek.com/wp-content/uploads/2021/11/Tofu-Stir-Fry-Landscape-Image.jpg",
+    "category": "Vegan",
+    "servings": 2,
+    "prepTime": "20 minutes",
+    "ingredients": [
+      { "name": "Firm tofu", "quantity": "200", "unit": "g" },
+      { "name": "Broccoli", "quantity": "2", "unit": "cups" },
+      { "name": "Soy sauce", "quantity": "2", "unit": "tbsp" },
+      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
+      { "name": "Sesame oil", "quantity": "1", "unit": "tsp" },
+      { "name": "Vegetable oil", "quantity": "1", "unit": "tbsp" }
+    ],
+    "instructions": [
+      "Fry tofu until golden.",
+      "Stir-fry garlic and broccoli, then add tofu.",
+      "Pour soy sauce and sesame oil. Stir and serve."
+    ],
+    "calories": 290
+  },
+  {
+    "recipeName": "Avocado Toast with Egg",
+    "imageLink": "https://emeals-menubuilder.s3.amazonaws.com/v1/recipes/859655/pictures/large_avocado-toast-eggs-benedict.jpg",
+    "category": "Breakfast",
+    "servings": 1,
+    "prepTime": "10 minutes",
+    "ingredients": [
+      { "name": "Whole grain bread", "quantity": "1", "unit": "slice" },
+      { "name": "Avocado", "quantity": "1/2", "unit": "piece" },
+      { "name": "Egg", "quantity": "1", "unit": "piece" },
+      { "name": "Salt", "quantity": "to taste" },
+      { "name": "Black pepper", "quantity": "to taste" }
+    ],
+    "instructions": [
+      "Toast the bread slice.",
+      "Mash avocado on the toast.",
+      "Cook egg to preference (boiled, poached, fried).",
+      "Place egg on top of avocado toast and season."
+    ],
+    "calories": 270
+  },
+  {
+    "recipeName": "Chickpea Salad",
+    "imageLink": "https://www.themediterraneandish.com/wp-content/uploads/2023/12/TMD-Chickpea-Salad-Leads-01-Angle-Horizontal.jpg",
+    "category": "Vegan",
+    "servings": 2,
+    "prepTime": "10 minutes",
+    "ingredients": [
+      { "name": "Chickpeas (cooked)", "quantity": "1", "unit": "cup" },
+      { "name": "Cucumber", "quantity": "1/2", "unit": "cup" },
+      { "name": "Red onion", "quantity": "1/4", "unit": "cup" },
+      { "name": "Tomato", "quantity": "1", "unit": "medium" },
+      { "name": "Parsley", "quantity": "2", "unit": "tbsp" },
+      { "name": "Lemon juice", "quantity": "1", "unit": "tbsp" },
+      { "name": "Olive oil", "quantity": "1", "unit": "tbsp" }
+    ],
+    "instructions": [
+      "Chop vegetables and mix with chickpeas.",
+      "Add parsley, lemon juice, and olive oil.",
+      "Toss well and serve fresh."
+    ],
+    "calories": 240
+  },
+  {
+    "recipeName": "Banana Peanut Butter Smoothie",
+    "imageLink": "https://kitchenaid.co.nz/cdn/shop/articles/KA_MOTHERS_DAY_2336170_1.jpg?v=1680749156",
+    "category": "Snack",
+    "servings": 1,
+    "prepTime": "5 minutes",
+    "ingredients": [
+      { "name": "Banana", "quantity": "1", "unit": "medium" },
+      { "name": "Peanut butter", "quantity": "1", "unit": "tbsp" },
+      { "name": "Milk (or almond milk)", "quantity": "1", "unit": "cup" },
+      { "name": "Ice cubes", "quantity": "3", "unit": "pieces" }
+    ],
+    "instructions": [
+      "Add all ingredients to a blender.",
+      "Blend until smooth.",
+      "Serve cold."
+    ],
+    "calories": 300
+  }
+]

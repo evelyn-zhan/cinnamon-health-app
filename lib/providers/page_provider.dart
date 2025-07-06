@@ -1,7 +1,7 @@
-// lib/providers/page_provider.dart
 import 'package:flutter/material.dart';
 import 'package:health_mobile_app/screens/articles.dart';
 import 'package:health_mobile_app/screens/home.dart';
+import 'package:health_mobile_app/screens/recipes.dart';
 import 'package:health_mobile_app/screens/progress.dart';
 import 'package:health_mobile_app/screens/todo.dart';
 
@@ -11,7 +11,8 @@ class PageProvider with ChangeNotifier {
     Home(),
     Articles(),
     ToDo(),
-    ProgressTrackerScreen(), // Tambahkan layar ProgressTrackerScreen di sini
+    Recipes(),
+    ProgressTrackerScreen()
   ];
   String pageName = "";
 
@@ -22,15 +23,12 @@ class PageProvider with ChangeNotifier {
     } else if (pageIndex == 2) {
       pageName = "My Tasks";
     } else if (pageIndex == 3) {
-      pageName = "Progress"; // Sesuaikan nama untuk indeks 3
+      pageName = "Recipes";
+    } else if (pageIndex == 4) {
+      pageName = "Progress";
     } else {
-      pageName = ""; // Untuk indeks 0 (Home)
+      pageName = "";
     }
     notifyListeners();
   }
-
-  // Metode addPage yang sebelumnya saya sarankan tidak lagi diperlukan di sini
-  // karena semua halaman sudah didefinisikan secara statis di dalam list 'page'.
-  // Jika Anda ingin fleksibilitas untuk menambahkan halaman secara dinamis di masa mendatang,
-  // Anda bisa mempertimbangkan untuk mengembalikannya.
 }
