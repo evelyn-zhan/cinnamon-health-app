@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InfoCard extends StatelessWidget {
+class ProgressCardTile extends StatelessWidget {
   final String title;
   final String value;
   final String comparisonText;
@@ -9,9 +9,10 @@ class InfoCard extends StatelessWidget {
   final List<Color> gradientColors;
   final Alignment beginGradient;
   final Alignment endGradient;
+  final bool isDarkMode;
 
-  const InfoCard({
-    Key? key,
+  const ProgressCardTile({
+    super.key,
     required this.title,
     required this.value,
     required this.comparisonText,
@@ -19,42 +20,63 @@ class InfoCard extends StatelessWidget {
     required this.gradientColors,
     required this.beginGradient,
     required this.endGradient,
-  }) : super(key: key);
+    required this.isDarkMode,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      margin: EdgeInsets.zero,
       child: Container(
-        padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
             colors: gradientColors,
             begin: beginGradient,
             end: endGradient,
           ),
-          color: Theme.of(context).canvasColor
         ),
+        padding: const EdgeInsets.all(20),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w500)),
-                  SizedBox(height: 4),
-                  Text(value, style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w700)),
-                  SizedBox(height: 8),
-                  Text(comparisonText, style: GoogleFonts.poppins(fontSize: 13))
-                ]
-              )
+              child: ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  title,
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: isDarkMode ? Colors.white : Colors.black,
+                  ),
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 5),
+                    Text(
+                      value,
+                      style: GoogleFonts.poppins(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: isDarkMode ? Colors.white : Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      comparisonText,
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Image.asset(
               imageAsset,
               width: 80,
