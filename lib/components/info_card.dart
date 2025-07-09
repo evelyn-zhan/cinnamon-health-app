@@ -9,8 +9,6 @@ class InfoCard extends StatelessWidget {
   final List<Color> gradientColors;
   final Alignment beginGradient;
   final Alignment endGradient;
-  final Color textColor;
-  final Color comparisonTextColor;
 
   const InfoCard({
     Key? key,
@@ -19,66 +17,40 @@ class InfoCard extends StatelessWidget {
     required this.comparisonText,
     required this.imageAsset,
     required this.gradientColors,
-    this.beginGradient = Alignment.topLeft,
-    this.endGradient = Alignment.bottomRight,
-    required this.textColor,
-    required this.comparisonTextColor,
+    required this.beginGradient,
+    required this.endGradient,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20.0),
+      padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: gradientColors,
           begin: beginGradient,
           end: endGradient,
         ),
-        borderRadius: BorderRadius.circular(15),
+        color: Theme.of(context).canvasColor,
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            spreadRadius: 2,
-            blurRadius: 10,
-            offset: Offset(0, 5),
-          ),
-        ],
+         BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 3, offset: Offset(0, 5))
+       ]
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: textColor,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  value,
-                  style: GoogleFonts.poppins(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  comparisonText,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: comparisonTextColor,
-                  ),
-                ),
-              ],
-            ),
+                Text(title, style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w500)),
+                SizedBox(height: 4),
+                Text(value, style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w700)),
+                SizedBox(height: 8),
+                Text(comparisonText, style: GoogleFonts.poppins(fontSize: 13))
+              ]
+            )
           ),
           SizedBox(width: 10),
           Image.asset(

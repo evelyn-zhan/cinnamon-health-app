@@ -13,7 +13,7 @@ class TodoProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void addTask(String title, String? category) {
+  void addTask(String title, String? category, String date) {
     Color categoryColor;
 
     if (category == "Fitness") {
@@ -30,7 +30,8 @@ class TodoProvider with ChangeNotifier {
       "title": title,
       "category": category,
       "color": categoryColor,
-      "done": false
+      "done": false,
+      "date": date
     });
 
     recalculateCounts();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:health_mobile_app/providers/todo_provider.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
@@ -11,11 +12,82 @@ class AddTaskBottomSheet extends StatefulWidget {
 }
 
 class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
-
   TextEditingController taskTitleC = TextEditingController();
 
   List<String> categories = ["Fitness", "Nutrition", "Self Care", "Other"];
   String? taskCategory = "Fitness";
+
+  DateTime? selectedDate;
+  Future<void> selectDate() async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(DateTime.now().year),
+      lastDate: DateTime(2050),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Color(0xFF0369A1),
+              onPrimary: Colors.white,
+              onSurface: Colors.black
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xFF0369A1),
+                foregroundColor: Colors.white
+              )
+            )
+          ),
+          child: child!
+        );
+      }
+    );
+
+    if (pickedDate != null) {
+      setState(() {
+        selectedDate = pickedDate;
+      });
+      selectTime();
+    }
+  }
+
+  Future<void> selectTime() async {
+    TimeOfDay? pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Color(0xFF0369A1),
+              onPrimary: Colors.white,
+              onSurface: Colors.black
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xFF0369A1),
+                foregroundColor: Colors.white
+              )
+            )
+          ),
+          child: child!
+        );
+      }
+    );
+
+    if (pickedTime != null) {
+      setState(() {
+        selectedDate = DateTime(
+          selectedDate!.year,
+          selectedDate!.month,
+          selectedDate!.day,
+          pickedTime.hour,
+          pickedTime.minute
+        );
+      });
+    }
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -88,6 +160,29 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 ),
                 SizedBox(height: 16),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Date: ${selectedDate == null ? "Not Set" : DateFormat("dd MMM yyyy, HH:mm").format(selectedDate!)}",
+                      style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600)
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () => selectDate(),
+                      icon: Icon(Icons.calendar_month_rounded, color: Colors.white, size: 20),
+                      label: Text("Select Date", style: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.w600)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)
+                        )
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton.icon(
@@ -110,7 +205,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     ElevatedButton.icon(
                       onPressed: () {
                         if (taskTitleC.text.isNotEmpty) {
-                          context.read<TodoProvider>().addTask(taskTitleC.text, taskCategory);
+                          context.read<TodoProvider>().addTask(taskTitleC.text, taskCategory, DateFormat("dd MMM yyyy, HH:mm").format(selectedDate!));
                           taskTitleC.text = "";
                           taskCategory = "Fitness";
                           Navigator.pop(context);
