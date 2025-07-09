@@ -24,7 +24,15 @@ class ToDoCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(task["title"], style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(task["title"], style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w600)),
+                  SizedBox(width: 8),
+                  if (task["date"] != null)
+                    Text(task["date"].toString(), style: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 13, fontWeight: FontWeight.w600))
+                ]
+              ),
               SizedBox(height: 4),
               Text(task["category"], style: GoogleFonts.poppins(color: task["color"], fontSize: 13, fontWeight: FontWeight.w600)),
             ]

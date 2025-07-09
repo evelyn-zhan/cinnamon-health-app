@@ -6,9 +6,7 @@ class ExerciseCard extends StatelessWidget {
   final String title;
   final String value;
   final String valueSuffix;
-  // final Color backgroundColor;
   final Color valueColor;
-  // final Color shadowColor;
 
   const ExerciseCard({
     Key? key,
@@ -16,9 +14,7 @@ class ExerciseCard extends StatelessWidget {
     required this.title,
     required this.value,
     required this.valueSuffix,
-    // required this.backgroundColor,
     required this.valueColor,
-    // required this.shadowColor,
   }) : super(key: key);
 
   @override

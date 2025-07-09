@@ -17,8 +17,8 @@ class InfoCard extends StatelessWidget {
     required this.comparisonText,
     required this.imageAsset,
     required this.gradientColors,
-    this.beginGradient = Alignment.topLeft,
-    this.endGradient = Alignment.bottomRight,
+    required this.beginGradient,
+    required this.endGradient,
   }) : super(key: key);
 
   @override

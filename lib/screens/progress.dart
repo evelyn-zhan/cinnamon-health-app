@@ -38,9 +38,10 @@ class ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
     final Color nutritionColor = Color(0xFF16A34A);
     final Color selfCareColor = Color(0xFFCA8A04);
 
-    final List<Color> gradientColors = [Color(0xFFB8E6FE), Color(0xFFDFF2FE)];
-    final Alignment beginGradient = Alignment.topLeft;
-    final Alignment endGradient = Alignment.bottomRight;
+    // final List<Color> gradientColors = [Color(0xFFB8E6FE), Color(0xFFDFF2FE)];
+    final List<Color> gradientColors = [Color(0xFFa1c4fd), Color(0xFFc2e9fb)];
+    // final Alignment beginGradient = Alignment.topLeft;
+    // final Alignment endGradient = Alignment.bottomRight;
 
     final double totalCaloriesBurned = 257.0;
     final double ramenCalories = 240.0;
@@ -73,8 +74,8 @@ class ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [Color(0xFFffd6a8), Color(0xFFfff7ed)],
-                          begin: beginGradient,
-                          end: endGradient,
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
                         color: Theme.of(context).canvasColor,
                         borderRadius: BorderRadius.circular(10),
@@ -132,7 +133,9 @@ class ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                 value: "${totalCaloriesBurned.toStringAsFixed(0)} kcal",
                 comparisonText: "≈ ${ramenEquivalent.toStringAsFixed(2)} bowl(s) of Ramen",
                 imageAsset: "assets/images/ramen.png",
-                gradientColors: gradientColors
+                gradientColors: [Color(0xFFFFE29F), Color(0xFFFFC371)],
+                beginGradient: Alignment.topLeft,
+                endGradient: Alignment.bottomRight
               ),
               SizedBox(height: 15),
               InfoCard(
@@ -140,7 +143,9 @@ class ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
                 value: "${totalDistanceKm.toStringAsFixed(2)} km",
                 comparisonText: "≈ Distance equivalent to climbing to\nthe top of Big Ben in Britain ${bigBenEquivalent.toStringAsFixed(2)} time(s)",
                 imageAsset: "assets/images/big-ben.png",
-                gradientColors: gradientColors
+                gradientColors: [Color(0xFFa1c4fd), Color(0xFFc2e9fb)],
+                beginGradient: Alignment.topRight,
+                endGradient: Alignment.bottomLeft
               ),
               SizedBox(height: 32),
               Text(

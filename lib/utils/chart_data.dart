@@ -58,12 +58,12 @@ LineChartData getWeightChartData(List<FlSpot> spots, List<String> dateLabels, Co
             if (index >= 0 && index < dateLabels.length) {
               text = dateLabels[index];
             } else {
-              text = '';
+              text = "";
             }
             return SideTitleWidget(
-              child: Text(text, style: style, textAlign: TextAlign.center),
               meta: meta,
               space: 15.0,
+              child: Text(text, style: style, textAlign: TextAlign.center)
             );
           },
         ),
@@ -98,6 +98,21 @@ LineChartData getWeightChartData(List<FlSpot> spots, List<String> dateLabels, Co
     maxX: 6,
     minY: minYValue,
     maxY: maxYValue,
+    lineTouchData: LineTouchData(
+      enabled: true,
+      handleBuiltInTouches: true,
+      touchTooltipData: LineTouchTooltipData(
+        tooltipPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        getTooltipItems: (touchedSpots) {
+          return touchedSpots.map((spot) {
+            return LineTooltipItem(
+              spot.y.toStringAsFixed(1),
+              TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
+            );
+          }).toList();
+        },
+      ),
+    ),
     lineBarsData: [
       LineChartBarData(
         spots: spots,
