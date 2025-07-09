@@ -6,7 +6,9 @@ class ExerciseCard extends StatelessWidget {
   final String title;
   final String value;
   final String valueSuffix;
+  final Color backgroundColor;
   final Color valueColor;
+  final Color shadowColor;
 
   const ExerciseCard({
     Key? key,
@@ -14,7 +16,9 @@ class ExerciseCard extends StatelessWidget {
     required this.title,
     required this.value,
     required this.valueSuffix,
+    required this.backgroundColor,
     required this.valueColor,
+    required this.shadowColor,
   }) : super(key: key);
 
   @override
@@ -23,11 +27,16 @@ class ExerciseCard extends StatelessWidget {
       height: 100,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Theme.of(context).canvasColor,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
-          BoxShadow(color: Theme.of(context).shadowColor, spreadRadius: 1, blurRadius: 3, offset: Offset(0, 5))
-        ]
+          BoxShadow(
+            color: shadowColor,
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: Offset(0, 5),
+          ),
+        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,28 +44,40 @@ class ExerciseCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600)),
-              SizedBox(height: 12),
+              Text(
+                title,
+                style: GoogleFonts.poppins(
+                    fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+              SizedBox(height: 11),
               RichText(
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "$value ",
-                      style: GoogleFonts.poppins(color: valueColor, fontSize: 20, fontWeight: FontWeight.w700)
+                      text: '$value ',
+                      style: GoogleFonts.poppins(
+                        color: valueColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     TextSpan(
                       text: valueSuffix,
-                      style: GoogleFonts.poppins(color: Color(0xFF898989), fontSize: 15, fontWeight: FontWeight.w600)
-                    )
-                  ]
-                )
+                      style: GoogleFonts.poppins(
+                        color: Color(0xFF898989),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
               )
-            ]
+            ],
           ),
           Spacer(),
           if (iconAsset != null) Image.asset(iconAsset!, width: 30, height: 30),
-        ]
-      )
+        ],
+      ),
     );
   }
 }
