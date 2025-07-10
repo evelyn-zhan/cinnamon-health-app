@@ -1,7 +1,7 @@
 [
   {
     "recipeName": "Grilled Chicken Salad",
-    "imageLink": "https://healthbeet.org/wp-content/uploads/2020/08/Grilled-BBQ-Chicken-landscape-Large.jpg",
+    "imageLink": "assets/images/recipe-1.jpg",
     "category": "Healthy",
     "servings": 2,
     "prepTime": "25 minutes",
@@ -27,7 +27,7 @@
   },
   {
     "recipeName": "Quinoa Veggie Bowl",
-    "imageLink": "https://media.istockphoto.com/id/893716434/photo/healhty-vegan-lunch-bowl-avocado-quinoa-sweet-potato-tomato-spinach-and-chickpeas-vegetables.jpg?s=612x612&w=0&k=20&c=Iq4JOLbBYugsBqGjfoT2T9teJ0hd-sAVtTilVi_0PRM=",
+    "imageLink": "assets/images/recipe-2.jpg",
     "category": "Vegan",
     "servings": 2,
     "prepTime": "25 minutes",
@@ -52,7 +52,7 @@
   },
   {
     "recipeName": "Oatmeal with Berries and Almonds",
-    "imageLink": "https://realfood.tesco.com/media/images/RFO-1400x919-BerryOatmealCrunch-be799601-93e0-44d4-9fb5-1f8bc533b93a-0-1400x919.jpg",
+    "imageLink": "assets/images/recipe-3.jpg",
     "category": "Breakfast",
     "servings": 1,
     "prepTime": "10 minutes",
@@ -73,7 +73,7 @@
   },
   {
     "recipeName": "Baked Salmon with Asparagus",
-    "imageLink": "https://www.washingtonpost.com/resizer/QHMod_FnzsRaXR9oep_ZThxYGTk=/arc-anglerfish-washpost-prod-washpost/public/ZTVDFIBSQ4I6ZABWPWZFLP7ROY.jpg",
+    "imageLink": "assets/images/recipe-4.jpg",
     "category": "Healthy",
     "servings": 2,
     "prepTime": "25 minutes",
@@ -96,7 +96,7 @@
   },
   {
     "recipeName": "Greek Yogurt Parfait",
-    "imageLink": "https://swirlsofflavor.com/wp-content/uploads/2022/01/Fruit-Yogurt-Parfait-Horizontal-1-scaled.jpg",
+    "imageLink": "assets/images/recipe-5.jpg",
     "category": "Snack",
     "servings": 1,
     "prepTime": "5 minutes",
@@ -114,7 +114,7 @@
   },
   {
     "recipeName": "Stir-Fried Tofu with Broccoli",
-    "imageLink": "https://thedomesticgeek.com/wp-content/uploads/2021/11/Tofu-Stir-Fry-Landscape-Image.jpg",
+    "imageLink": "assets/images/recipe-6.jpg",
     "category": "Vegan",
     "servings": 2,
     "prepTime": "20 minutes",
@@ -135,7 +135,7 @@
   },
   {
     "recipeName": "Avocado Toast with Egg",
-    "imageLink": "https://emeals-menubuilder.s3.amazonaws.com/v1/recipes/859655/pictures/large_avocado-toast-eggs-benedict.jpg",
+    "imageLink": "assets/images/recipe-7.jpg",
     "category": "Breakfast",
     "servings": 1,
     "prepTime": "10 minutes",
@@ -156,7 +156,7 @@
   },
   {
     "recipeName": "Chickpea Salad",
-    "imageLink": "https://www.themediterraneandish.com/wp-content/uploads/2023/12/TMD-Chickpea-Salad-Leads-01-Angle-Horizontal.jpg",
+    "imageLink": "assets/images/recipe-8.jpeg",
     "category": "Vegan",
     "servings": 2,
     "prepTime": "10 minutes",
@@ -178,7 +178,7 @@
   },
   {
     "recipeName": "Banana Peanut Butter Smoothie",
-    "imageLink": "https://kitchenaid.co.nz/cdn/shop/articles/KA_MOTHERS_DAY_2336170_1.jpg?v=1680749156",
+    "imageLink": "assets/images/recipe-9.jpg",
     "category": "Snack",
     "servings": 1,
     "prepTime": "5 minutes",
