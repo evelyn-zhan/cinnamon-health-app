@@ -36,6 +36,7 @@ class _SignUpState extends State<SignUp> {
                   Text("Sign up", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600)),
                   SizedBox(height: 20,),
                   TextField(
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Email",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -51,6 +52,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(height: 20,),
                   TextField(
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Username",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -66,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(height: 20,),
                   TextField(
-                    style: GoogleFonts.poppins(color: Colors.black),
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -82,7 +84,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(height: 20,),
                   TextField(
-                    style: GoogleFonts.poppins(color: Colors.black),
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Confirm Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -117,21 +119,19 @@ class _SignUpState extends State<SignUp> {
                     )
                   ),  
                   SizedBox(height: 30,),  
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Already have account? ", style: GoogleFonts.poppins(color: Colors.grey)),
-                        GestureDetector(
-                          onTap: () {
-                            context.read<LoginSignupProvider>().clearController();
-                            Navigator.pop(context);
-                          },
-                          child: Text("Log in", style: GoogleFonts.poppins(color: Color(0xFF1E1E1E), fontWeight: FontWeight.w600, decoration: TextDecoration.underline)),
-                        )
-                      ],
-                    )
-                  ),   
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already have account? ", style: GoogleFonts.poppins(color: Colors.grey)),
+                      GestureDetector(
+                        onTap: () {
+                          context.read<LoginSignupProvider>().clearController();
+                          Navigator.pop(context);
+                        },
+                        child: Text("Log in", style: GoogleFonts.poppins(color: Color(0xFF1E1E1E), fontWeight: FontWeight.w600, decoration: TextDecoration.underline)),
+                      )
+                    ],
+                  )  
                 ]
               ),
             ),

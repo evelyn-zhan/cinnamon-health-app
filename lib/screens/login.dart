@@ -51,6 +51,7 @@ class _LoginState extends State<Login> {
                   Text("Login", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600)),
                   SizedBox(height: 20,),
                   TextField(
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Username",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -66,7 +67,7 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 20,),
                   TextField(
-                    style: GoogleFonts.poppins(color: Colors.black),
+                    style: GoogleFonts.poppins(),
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -99,21 +100,19 @@ class _LoginState extends State<Login> {
                     )
                   ),  
                   SizedBox(height: 30,),  
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Don't have an account? ", style: GoogleFonts.poppins(color: Colors.grey)),
-                        GestureDetector(
-                          onTap: () {
-                            context.read<LoginSignupProvider>().clearController();
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
-                          },
-                          child: Text("Sign up", style: GoogleFonts.poppins(color: Color(0xFF1E1E1E), fontWeight: FontWeight.w600, decoration: TextDecoration.underline))
-                        )
-                      ],
-                    )
-                  ),   
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Don't have an account? ", style: GoogleFonts.poppins(color: Colors.grey)),
+                      GestureDetector(
+                        onTap: () {
+                          context.read<LoginSignupProvider>().clearController();
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
+                        },
+                        child: Text("Sign up", style: GoogleFonts.poppins(color: Color(0xFF1E1E1E), fontWeight: FontWeight.w600, decoration: TextDecoration.underline))
+                      )
+                    ],
+                  ) 
                 ]
               ),
             ),
