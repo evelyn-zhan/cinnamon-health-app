@@ -69,6 +69,7 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 20,),
                   TextField(
                     style: GoogleFonts.poppins(),
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -85,6 +86,7 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 20,),
                   TextField(
                     style: GoogleFonts.poppins(),
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Confirm Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
