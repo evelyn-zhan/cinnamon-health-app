@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProfileProvider with ChangeNotifier {
-  String username = "Cinnamon";
-  String password = "cinnamon123";
-  String email = "cinnamon@mail.com";
+  String username = "";
+  String password = "";
+  String email = "";
 
   String usernameErrorMessage = "";
   String passwordErrorMessage = "";
@@ -14,6 +14,14 @@ class ProfileProvider with ChangeNotifier {
   TextEditingController passwordC = TextEditingController();
   TextEditingController newPasswordC = TextEditingController();
   TextEditingController confirmNewPasswordC = TextEditingController();
+
+  void setInfo(String loginUsername, String loginPassword, String loginEmail) {
+    username = loginUsername;
+    password = loginPassword;
+    email = loginEmail;
+
+    notifyListeners();
+  }
 
   bool isDark = false, isNotificationOn = false;
 
