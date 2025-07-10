@@ -19,6 +19,7 @@ class LoginSignupProvider with ChangeNotifier{
   String usernameErrorText = "";
   String passwordErrorText = "";
 
+  String newEmailErrorText = "";
   String newUsernameErrorText = "";
   String newPasswordErrorText = "";
   String confirmNewPasswordErrorText = "";
@@ -27,7 +28,8 @@ class LoginSignupProvider with ChangeNotifier{
   bool isSignupValid = false;
 
   void signup() {
-    if (newEmailC.text.isEmpty) newUsernameErrorText = "Please enter an email";
+    if (newEmailC.text.isEmpty) newEmailErrorText = "Please enter an email";
+    else newEmailErrorText = "";
 
     if (newUsernameC.text.isEmpty) newUsernameErrorText = "Please enter a username";
     else {
