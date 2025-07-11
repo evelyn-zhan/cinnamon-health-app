@@ -205,7 +205,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     ElevatedButton.icon(
                       onPressed: () {
                         if (taskTitleC.text.isNotEmpty) {
-                          context.read<TodoProvider>().addTask(taskTitleC.text, taskCategory, DateFormat("dd MMM yyyy, HH:mm").format(selectedDate!));
+                          context.read<TodoProvider>().addTask(taskTitleC.text, taskCategory, selectedDate == null ? "" : DateFormat("dd MMM yyyy, HH:mm").format(selectedDate!));
                           taskTitleC.text = "";
                           taskCategory = "Fitness";
                           Navigator.pop(context);
