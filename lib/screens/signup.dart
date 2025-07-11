@@ -40,6 +40,7 @@ class _SignUpState extends State<SignUp> {
                     decoration: InputDecoration(
                       labelText: "Email",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
+                      errorText: (context.watch<LoginSignupProvider>().newEmailErrorText == "" ? null : context.watch<LoginSignupProvider>().newEmailErrorText),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Color(0xFF1E1E1E))
                       ),
@@ -69,6 +70,7 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 20,),
                   TextField(
                     style: GoogleFonts.poppins(),
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),
@@ -85,6 +87,7 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(height: 20,),
                   TextField(
                     style: GoogleFonts.poppins(),
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Confirm Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),

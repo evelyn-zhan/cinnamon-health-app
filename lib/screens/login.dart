@@ -68,6 +68,7 @@ class _LoginState extends State<Login> {
                   SizedBox(height: 20,),
                   TextField(
                     style: GoogleFonts.poppins(),
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: GoogleFonts.poppins(color: Colors.grey),

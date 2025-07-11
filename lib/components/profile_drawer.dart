@@ -77,6 +77,8 @@ class ProfileDrawer extends StatelessWidget {
                 subtitle: Text(context.watch<ProfileProvider>().username, style: GoogleFonts.poppins(color: Colors.grey, fontSize: 13)),
                 trailing: GestureDetector(
                   onTap: () {
+                    context.read<ProfileProvider>().clearController();
+                    context.read<ProfileProvider>().resetErrorMessage();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeUsername()));
                   },
                   child: Text("Edit username", style: GoogleFonts.poppins(fontSize: 12))
@@ -103,6 +105,8 @@ class ProfileDrawer extends StatelessWidget {
                 ),
                 trailing: GestureDetector(
                   onTap: () {
+                    context.read<ProfileProvider>().clearController();
+                    context.read<ProfileProvider>().resetErrorMessage();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePassword()));
                   },
                   child: Text("Change password", style: GoogleFonts.poppins(fontSize: 12))
